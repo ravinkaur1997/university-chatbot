@@ -21,13 +21,11 @@ QUERY_RESPONSE_PATH = os.path.join(DATA_DIR, "university_chatbot_queries_respons
 FAISS_INDEX_PATH = os.path.abspath(FAISS_INDEX_PATH)
 QUERY_RESPONSE_PATH = os.path.abspath(QUERY_RESPONSE_PATH)
 
-print(f"FAISS index expected at: {QUERY_RESPONSE_PATH}")
-print(f"Exists: {os.path.exists(QUERY_RESPONSE_PATH)}")
-
+# print(f"FAISS index expected at: {QUERY_RESPONSE_PATH}")
+# print(f"Exists: {os.path.exists(QUERY_RESPONSE_PATH)}")
 
 try:
     index = faiss.read_index(FAISS_INDEX_PATH)
-    # df = pd.DataFrame(QUERY_RESPONSE_PATH)
     df = pd.read_csv(QUERY_RESPONSE_PATH)
     print("FAISS index and query-response dataset loaded successfully.")
 except Exception as e:
